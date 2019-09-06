@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../base/react.min.js"></script>
+     <!-- 提供了react对象 -->
+    <script src="../base/react-dom.min.js"></script>
+    <!--  提供reactdom‘对象-->
+    <script src="../base/browser.min.js"></script>
+    <!-- 帮助浏览器解析jsx javascriptxml   -->
+</head>
+<body>
+    <div id='app'>
+
+    </div>
+    <script type="text/babel">
+    //创建一个虚拟dom
+        let Hehe=React.createClass({
+            render(){
+                return(
+                    <div>
+                        <h1>Hollow word</h1>
+                        <hr/>
+                        <p>你好世界</p>
+                    </div> 
+                )
+            }
+        })
+        //将虚拟dom 转化为真实dom
+        ReactDOM.render(<Hehe/>,app)
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../base/react.min.js"></script>
+    <script src="../base/react-dom.min.js"></script>
+    <script src="../base/browser.min.js"></script>
+    <title>Document</title>
+
+</head>
+<body>
+   <div id='app'>
+
+   </div>
+   <script type="text/babel">
+      let Component=React.createClass({
+          listarr:['爱情','科幻','悬疑','喜剧'],
+          render(){
+             return(
+                 <ul>
+                    <li>123456789</li>
+                    {this.listarr.map((item)=>{
+                        return <li>{item}</li>
+                    })}
+                </ul>
+             ) 
+          }
+      })
+      ReactDOM.render(<Component/>,app)
+   </script> 
+</body>
+</html>

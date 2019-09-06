@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../base/react.min.js"></script>
+    <script src="../base/react-dom.min.js"></script>
+    <script src="../base/browser.min.js"></script>
+    <title>Document</title>
+    <style>
+        .test{
+           width:100px;
+           height:100px;
+           background:pink; 
+        }
+    </style>
+</head>
+<body>
+   <div id='app'>
+
+   </div>
+   <script type="text/babel">
+      let Component=React.createClass({
+        getInitialState(){  //声明周期钩子函数，初始化state
+           console.log('初始化state') 
+           return { //return 出来的值为state里面的值
+            show:true
+           }
+        },
+        toggle(){
+            // this.state.show=!this.state.show  react里面的数据，数据变不会自动改变，需要setState通知页面改变
+            this.setState({
+                show:!this.state.show
+            })
+        },
+          render(){
+              console.log('渲染函数',this)
+              let {state}=this  //做一步解构赋值
+             return(
+                 <div>
+                    {!state.show|| <div className="test"></div>}
+                    
+                    <button onClick={this.toggle}>点我</button>
+                 </div>
+             )
+         }
+      })
+      ReactDOM.render(<Component/>,app)
+   </script> 
+</body>
+</html>

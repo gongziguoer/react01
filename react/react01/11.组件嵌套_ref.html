@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../base/react.min.js"></script>
+    <script src="../base/react-dom.min.js"></script>
+    <script src="../base/browser.min.js"></script>
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+   <div id='app'>
+
+   </div>
+   <script type="text/babel">
+       let Father=React.createClass({
+           getInitialState(){
+             return{
+                 hairtype:'小平头'
+             }
+           },
+           changeHair(){
+            console.log(this.refs.hehe.innerText)
+           },
+          render(){
+              console.log(this)
+              {/* console.log(this.ref.hehe.innerText) 为假的*/}
+             return(
+                 <div>
+                   <h3 ref='hehe'>这里是父组件</h3>
+                   <button onClick={this.changeHair}>改发型</button>
+                   
+                 </div>
+             )
+         }
+      })     
+      ReactDOM.render(<Father />,app)
+   </script> 
+</body>
+</html>
